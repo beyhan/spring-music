@@ -41,7 +41,13 @@ public class InfoController {
 
     @RequestMapping(value = "/appinfo")
     public ApplicationInfo info() {
-        return new ApplicationInfo(springEnvironment.getActiveProfiles(), getServiceNames());
+        return new ApplicationInfo(springEnvironment.getActiveProfiles(), getServiceNames(), "1.0.0");
+    }
+
+    @RequestMapping(value = "/envVarTest")
+    public String envVarTest() {
+
+        return System.getenv("TEST");
     }
 
     @RequestMapping(value = "/service")
