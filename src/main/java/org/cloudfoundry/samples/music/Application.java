@@ -9,6 +9,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class Application {
 
     public static void main(String[] args) {
+        System.exit(10);
         new SpringApplicationBuilder(Application.class)
                 .initializers(new SpringApplicationContextInitializer())
                 .listeners(new AlbumRepositoryPopulator())
